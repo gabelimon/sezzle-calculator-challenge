@@ -1,1 +1,1 @@
-web: bundle exec rails s -t 5:5 -p ${PORT:-80}
+web: bundle exec rails s -p ${PORT:-80}
