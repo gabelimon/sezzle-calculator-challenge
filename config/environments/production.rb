@@ -62,7 +62,8 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "online_calculator_production"
 
-  config.action_mailer.perform_caching = false
+  # config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   config.action_mailer.raise_delivery_errors = false
