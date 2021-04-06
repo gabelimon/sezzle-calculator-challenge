@@ -8,13 +8,13 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV.fetch("DATABASE_URL") { "localhost" } %>
-  username: <%= ENV.fetch("DATABASE_USERNAME") %>
-  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
   timeout: 5000
 
 development:
   <<: *default
+  host: <%= ENV.fetch("DATABASE_URL") { "localhost" } %>
+  username: <%= ENV.fetch("DATABASE_USERNAME") %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
   database: sezzle_calc_development
 
 # Warning: The database defined as "test" will be erased and
@@ -26,4 +26,5 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV.fetch("DATABASE_URL") %>
   database: sezzle_calc
