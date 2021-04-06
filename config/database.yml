@@ -13,8 +13,8 @@ default: &default
 development:
   <<: *default
   host: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
-  username: <%= ENV.fetch("DATABASE_USERNAME") %>
-  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
+  username: <%= ENV.fetch("DATABASE_USERNAME") { "" } %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") { "" } %>
   database: sezzle_calc_development
 
 # Warning: The database defined as "test" will be erased and
