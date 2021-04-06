@@ -1,0 +1,12 @@
+<h1>Calculator</h1>
+
+<%= form_with url: "calculator/calculate" do |form| %>
+  <%= form.label :formula, "Formula:" %>
+  <%= form.text_field :formula %>
+  <%= form.submit "Calculate" %>
+<% end %>
+<ul>
+<% @calculations.each do |calculation| %>
+  <li><%= calculation.formula %> = <%= calculation.result %></li>
+<% end %>
+</ul>
